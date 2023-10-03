@@ -16,7 +16,7 @@ spec:
         valueFiles:
           - $values/toxdatacommons.com/values/values.yaml
           - $values/toxdatacommons.com/values/fence.yaml
-          - $values/toxdatacommons.com/values/portal.yaml
+          - $values/toxdatacommons.com/values/indexd.yaml
           - $values/toxdatacommons.com/values/guppy.yaml
     - repoURL: 'https://github.com/uc-cdis/toxdc-gitops.git'
       targetRevision: master
