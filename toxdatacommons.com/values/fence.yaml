@@ -6,7 +6,7 @@ fence:
     # -- (bool) Whether to run Fence usersync or not.
     usersync: true
     # -- (string) The cron schedule expression to use in the usersync cronjob. Runs every 30 minutes by default.
-    schedule: "*/30 * * * *"
+    schedule: "*/10 * * * *"
     # -- (string) To set a custom image for pulling the user.yaml file from S3. Default is the Gen3 Awshelper image.
     custom_image:
     # -- (bool) Whether to sync data from dbGaP.
