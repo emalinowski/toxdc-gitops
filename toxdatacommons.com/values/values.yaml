@@ -44,6 +44,11 @@ revproxy:
         # Replace with your hostname
           - toxdatacommons.com
 hatchery:
+  image:
+    # -- (string) The Docker image repository for the hatchery service.
+    repository: 
+    # -- (string) Overrides the image tag whose default is the chart appVersion.
+    tag: 2023.09
   hatchery:
     containers:
       - target-port: 8888
