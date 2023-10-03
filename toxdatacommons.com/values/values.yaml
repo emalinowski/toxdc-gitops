@@ -46,7 +46,7 @@ revproxy:
 hatchery:
   image:
     # -- (string) The Docker image repository for the hatchery service.
-    repository: 
+    repository: quay.io/cdis/hatchery
     # -- (string) Overrides the image tag whose default is the chart appVersion.
     tag: 2023.09
   hatchery:
