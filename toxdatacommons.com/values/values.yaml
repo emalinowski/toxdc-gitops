@@ -15,7 +15,7 @@ global:
     useLocalSecret:
         enabled: true
         localSecretName: external-secrets-toxdc-secret
-        localSecretNamespace: toxdc
+        localSecretNamespace: default
   revproxyArn: arn:aws:acm:us-east-1:243323637959:certificate/0f08ab71-281d-493e-9202-e434f2afdc22
 
 portal:
