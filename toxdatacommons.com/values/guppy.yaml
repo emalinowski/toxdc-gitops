@@ -1,11 +1,11 @@
 aws-es-proxy:
-  esEndpoint: vpc-toxdc-gen3-metadata-t6arp3r252dio4ujnphxw3mnoq.us-east-1.es.amazonaws.com
+  esEndpoint: vpc-toxdc-gen3-metadata-2-ma5ry4y2gbqpqlalrycxb4kplu.us-east-1.es.amazonaws.com
   externalSecrets:
     awsCreds: "toxdc-aws-es-proxy-creds"
   enabled: true
   image:
     repository: quay.io/cdis/aws-es-proxy
-    tag: 0.8
+    tag: v1.3.1
 
 elasticsearch:
   enabled: false
@@ -17,7 +17,7 @@ guppy:
   image:
     repository: quay.io/cdis/guppy
     pullPolicy: Always
-    tag: "2023.08"
+    tag: "2024.04"
 
   # -- (list) Elasticsearch index configurations
   indices:

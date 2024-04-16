@@ -100,7 +100,7 @@ sheepdog:
       subPath: "wsgi.py"
   image:
     repository: quay.io/cdis/sheepdog
-    tag: 2023.05
+    tag: bug_auth-audience-2
     pullPolicy: Always
 
 peregrine:
