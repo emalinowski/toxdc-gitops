@@ -1,5 +1,5 @@
 aws-es-proxy:
-  esEndpoint: vpc-toxdc-gen3-metadata-t6arp3r252dio4ujnphxw3mnoq.us-east-1.es.amazonaws.com
+  esEndpoint: vpc-toxdc-gen3-metadata-2-ma5ry4y2gbqpqlalrycxb4kplu.us-east-1.es.amazonaws.com
   externalSecrets:
     awsCreds: "toxdc-aws-es-proxy-creds"
   enabled: true
