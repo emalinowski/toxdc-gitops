@@ -1,4 +1,9 @@
 fence:
+  image:
+    # -- (string) The Docker image repository for the hatchery service.
+    repository: quay.io/cdis/fence
+    # -- (string) Overrides the image tag whose default is the chart appVersion.
+    tag: 2023.10
   externalSecrets:
     dbcreds: "toxdc-fence"
     fenceConfig: "toxdc-fence-config"
