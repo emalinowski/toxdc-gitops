@@ -97,7 +97,7 @@ sheepdog:
     - name: "config-volume"
       readOnly: true
       mountPath: "/var/www/sheepdog/settings.py"
-      subPath: "wsgi.py"
+      subPath: "settings.py"
   image:
     repository: quay.io/cdis/sheepdog
     tag: bug_auth-audience-2
