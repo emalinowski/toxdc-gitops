@@ -29,6 +29,6 @@ ssjdispatcher:
     sqsUrl: "https://sqs.us-east-1.amazonaws.com/243323637959/toxdc-data-bucket_data_upload/"
     jobPattern: "s3://toxdc-data-bucket/*"
     jobUser: "gdcapi"
-    jobPassword: ""
+    jobPassword: "test"
     metadataserviceUsername: "toxdatacommon_ssj_job_metadataservice"
     metadataservicePassword: "ssj_job_metadataservice"
