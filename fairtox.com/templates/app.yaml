@@ -23,7 +23,7 @@ spec:
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: default
+    namespace: argocd2
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
