@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gen3
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  sources:
+    - path: helm/gen3
+      repoURL: https://github.com/uc-cdis/gen3-helm
+      targetRevision: "master"
+      helm:
+        releaseName: toxdc_sand
+        valueFiles:
+          - $values/fairtox.com/values/values.yaml
+          - $values/fairtox.com/values/fence.yaml
+          - $values/fairtox.com/values/indexd.yaml
+          - $values/fairtox.com/values/guppy.yaml
+    - repoURL: 'https://github.com/naultran/toxdc-gitops.git'
+      targetRevision: master
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
