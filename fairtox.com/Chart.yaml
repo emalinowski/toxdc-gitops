@@ -1,6 +1,6 @@
 apiVersion: v2
-name: toxdatacommons.com
-description: toxdatacommons.com argo application
+name: fairtox.com
+description: fairtox.com argo application
 
 # A chart can be either an 'application' or a 'library' chart.
 #
