@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gen3
+  name: fairtoxgen3
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -23,7 +23,7 @@ spec:
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: argocd2
+    namespace: fairtox
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
