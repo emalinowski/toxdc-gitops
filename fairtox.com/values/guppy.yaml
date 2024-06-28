@@ -1,0 +1,41 @@
+aws-es-proxy:
+  esEndpoint: vpc-toxdc-gen3-metadata-2-ma5ry4y2gbqpqlalrycxb4kplu.us-east-1.es.amazonaws.com
+  externalSecrets:
+    awsCreds: "toxdc-aws-es-proxy-creds"
+  enabled: true
+  image:
+    repository: quay.io/cdis/aws-es-proxy
+    tag: v1.3.1
+
+elasticsearch:
+  enabled: false
+guppy:
+  enabled: true
+  # -- (int) Only relevant if tireAccessLevel is set to "regular".
+  # The minimum amount of files unauthorized users can filter down to
+
+  image:
+    repository: quay.io/cdis/guppy
+    pullPolicy: Always
+    tag: "2024.04"
+
+  # -- (list) Elasticsearch index configurations
+  indices:
+    - index: fairtox_treatment
+      type: treatment
+    - index: fairtox_subject
+      type: subject
+    - index: fairtox_data_file
+      type: data_file
+  # -- (string) The Elasticsearch configuration index
+  configIndex: fairtox_array-config
+  # -- (string) The field used for access control and authorization filters
+  authFilterField: auth_resource_path
+  # -- (bool) Whether or not to enable encryption for specified fields
+  enableEncryptWhitelist: true
+  # -- (string) A comma-separated list of fields to encrypt
+  encryptWhitelist: test1
+
+  esEndpoint: "elasticsearch:9200"
+
+  dbRestore: False
