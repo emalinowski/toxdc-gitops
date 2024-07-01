@@ -1,7 +1,7 @@
 global:
   dev: false
   hostname: ""
-  dictionaryUrl: "https://raw.githubusercontent.com/naultran/toxdatacommons/main/custom_configs/schema.json"
+  dictionaryUrl: "https://raw.githubusercontent.com/jyb4444/toxdatacommons_keji/main/custom_configs/schema.json"
   tierAccessLevel: "libre"
   tierAccessLimit: '"1000"'
   postgres:
