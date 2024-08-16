@@ -1,7 +1,7 @@
 global:
   dev: false
   hostname: ""
-  dictionaryUrl: "https://raw.githubusercontent.com/naultran/gen3_sandbox/test_keji/custom_configs/schema.json"
+  dictionaryUrl: "https://raw.githubusercontent.com/naultran/gen3_sandbox/SRP_engineering/custom_configs/schema.json"
   tierAccessLevel: "libre"
   tierAccessLimit: '"1000"'
   postgres:
