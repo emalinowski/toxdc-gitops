@@ -21,7 +21,7 @@ fence:
     # -- (bool) Forces ONLY a dbgap sync if "true", IGNORING user.yaml
     onlyDbgap: false
     # -- (string) Path to the user.yaml file in S3.
-    userYamlS3Path: s3://toxdatacommons-gen3-users/prod/user.yaml
+    # userYamlS3Path: s3://toxdatacommons-gen3-users/prod/user.yaml
   USER_YAML: |
     cloud_providers: {}
     authz:
