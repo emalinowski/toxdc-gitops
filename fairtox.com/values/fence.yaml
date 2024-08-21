@@ -55,6 +55,7 @@ fence:
         - cgmeyer@uchicago.edu
         - emalinowski@uchicago.edu
         - halltodd@msu.edu
+        - ykj2018720@gmail.com
         - yuankeji@msu.edu
         - mickelj@msu.edu
         - joel@danowitz.com
@@ -369,6 +370,9 @@ fence:
       halltodd@msu.edu:
         tags:
           name: Todd Hall, MSU
+      ykj2018720@gmail.com:
+        tags:
+          name; kyro Yuan, MSU
       yuankeji@msu.edu:
         tags:
           name: Keji Yuan, MSU
