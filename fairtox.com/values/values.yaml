@@ -20,7 +20,7 @@ global:
 
 portal:
  image:
-   repository: public.ecr.aws/p2f7c4k3/toxdc/portal
+   repository: public.ecr.aws/p2f7c4k3/pvatppg/portal
    pullPolicy: Always
    tag: "pvatppg"
 
