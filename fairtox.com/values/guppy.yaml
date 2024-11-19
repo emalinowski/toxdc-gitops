@@ -41,6 +41,9 @@ guppy:
   dbRestore: False
 
 etl:
+  image:
+    tube:
+      tag: "2023.10"
   etlMapping:
     mappings:
       - name: fairtox_treatment
