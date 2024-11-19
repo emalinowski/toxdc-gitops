@@ -39,3 +39,153 @@ guppy:
   esEndpoint: "elasticsearch:9200"
 
   dbRestore: False
+
+etl:
+  etlMapping:
+    mappings:
+      - name: fairtox_treatment
+        doc_type: treatment
+        type: aggregator
+        root: treatment
+        props:
+          - name: submitter_id
+          - name: project_id
+          - name: route
+          - name: test_article_name
+          - name: vehicle_name
+          - name: dose_amount
+          - name: dose_amount_unit
+        parent_props:
+          - path: subjects[subject_id:submitter_id,sex,strain].studies[studyID:submitter_id, organism, study_design, study_type, experimental_setting]
+      - name: fairtox_subject
+        doc_type: subject
+        type: aggregator
+        root: subject
+        props:
+          - name: submitter_id
+          - name: project_id
+          - name: sex
+          - name: euthanasia_method
+          - name: strain
+        parent_props:
+          - path: studies[studyID:submitter_id, organism, study_design, study_type, experimental_setting]
+        nested_props:
+          - name: samples
+            path: samples
+            props:
+              - name: sample_submitter_id
+                src: submitter_id
+              - name: biospecimen_anatomic_site
+              - name: method_of_sample_procurement
+              - name: preservation_method
+              - name: weight
+              - name: volume
+              - name: storage_vessel
+              - name: collection_protocol
+          - name: aliquots
+            path: samples.aliquots
+            props:
+              - name: analyte_type
+              - name: analyte_protocol
+              - name: extract_preservation_method
+          - name: treatments
+            path: treatments
+            props:
+              - name: test_article_name
+              - name: dose_amount
+              - name: dose_amount_unit
+              - name: route
+        aggregated_props:
+          - name: _samples_count
+            path: samples
+            fn: count
+          - name: _aliquots_count
+            path: samples.aliquots
+            fn: count
+          - name: _flow_data_count
+            path: samples.aliquots.flow_cytometry_assays.flow_datas
+            fn: count
+          - name: _flow_analysis_data_count
+            path: samples.aliquots.flow_cytometry_assays.flow_datas.flow_analysises.flow_analysis_datas
+            fn: count
+          - name: _ms_raw_data_count
+            path: samples.aliquots.mass_spec_assays.ms_raw_datas
+            fn: count
+          - name: _ms_analysed_data_count
+            path: samples.aliquots.mass_spec_assays.ms_raw_datas.ms_analyses
+            fn: count
+          - name: _weight_measurement_count
+            path: housings.diets.weight_measurements
+            fn: count
+          - name: _slide_image_count
+            path: samples.aliquots.slides.slide_images
+            fn: count
+          - name: _unaligned_read_count
+            path: samples.aliquots.read_groups.unaligned_reads
+            fn: count
+          - name: _unaligned_reads_qc_count
+            path: samples.aliquots.read_groups.unaligned_reads_qcs
+            fn: count
+          - name: _aligned_read_count
+            path: samples.aliquots.read_groups.aligned_reads
+            fn: count
+          - name: _aligned_reads_analyzed_data_count
+            path: samples.aliquots.read_groups.aligned_reads.alignment_workflows.aligned_reads_analyzed_datas
+            fn: count
+        joining_props:
+          - index: data_file
+            join_on: _subject_id
+            props:
+              - name: object_id
+                src: object_id
+                fn: set
+              - name: source_node
+                src: source_node
+                fn: set
+              - name: file_name
+                src: file_name
+                fn: set
+              - name: md5sum
+                src: md5sum
+                fn: set
+              - name: data_format
+                src: data_format
+                fn: set
+              - name: data_type
+                src: data_type
+                fn: set
+              - name: data_category
+                src: data_category
+                fn: set
+      - name: fairtox_data_file
+        doc_type: data_file
+        type: collector
+        root: None
+        category: data_file
+        props:
+          - name: source_node
+          - name: object_id
+          - name: md5sum
+          - name: file_name
+          - name: file_size
+          - name: data_format
+          - name: data_type
+          - name: data_category
+          - name: state
+          - name: SRA_accession_id
+        injecting_props:
+          subject:
+            props:
+              - name: _subject_id
+                src: id
+                fn: set
+              - name: project_id
+          study:
+            props:
+              - name: study_submitter_id
+                src: submitter_id
+                fn: set
+              - name: _study_id
+                src: id
+                fn: set
+              - name: project_id
