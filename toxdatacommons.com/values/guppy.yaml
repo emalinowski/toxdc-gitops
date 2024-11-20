@@ -79,8 +79,7 @@ etl:
           - name: samples
             path: samples
             props:
-              - name: sample_submitter_id
-                src: submitter_id
+              - name: submitter_id
               - name: biospecimen_anatomic_site
               - name: method_of_sample_procurement
               - name: preservation_method
