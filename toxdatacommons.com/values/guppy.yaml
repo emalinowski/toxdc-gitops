@@ -195,3 +195,12 @@ etl:
                 src: id
                 fn: set
               - name: project_id
+      - name: treatment_project_ids
+        doc_type: treatment
+        type: aggregator
+        root: treatment
+        props:
+          - name: submitter_id
+          - name: project_id  
+        parent_props:
+          - path: subjects[subject_submitter_id:submitter_id].studies[study_submitter_id:submitter_id]
