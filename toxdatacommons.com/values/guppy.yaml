@@ -46,6 +46,11 @@ guppy:
 
 
 etl:
+  resources:
+    tube:
+      memory: 2Gi
+    spark:
+      memory: 2Gi   
   image:
     tube:
       tag: "2024.10"
