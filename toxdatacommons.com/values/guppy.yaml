@@ -28,7 +28,7 @@ guppy:
     - index: toxdatacommons_data_file
       type: data_file
     - index: treatment_project_ids
-      type: treatment
+      type: treatment_project_ids
   # -- (string) The Elasticsearch configuration index
   configIndex: toxdatacommons_array-config
   # -- (string) The field used for access control and authorization filters
@@ -197,7 +197,7 @@ etl:
                 fn: set
               - name: project_id
       - name: treatment_project_ids
-        doc_type: treatment
+        doc_type: treatment_project_ids
         type: aggregator
         root: treatment
         props:
