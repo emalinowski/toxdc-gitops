@@ -185,13 +185,27 @@ etl:
           - name: data_category
           - name: state
           - name: SRA_accession_id
+          - name: project_id
         injecting_props:
           subject:
             props:
               - name: _subject_id
                 src: id
                 fn: set
-              - name: project_id
+          core_metadata_collection:
+            props:
+              - name: _core_metadata_collection_id
+                src: id
+                fn: set
+              - name: CMC_submitter_id
+                src: submitter_id
+                fn: set        
+              - name: creator
+                src: creator
+                fn: set
+              - name: description
+                src: description
+                fn: set  
           study:
             props:
               - name: study_submitter_id
@@ -200,7 +214,6 @@ etl:
               - name: _study_id
                 src: id
                 fn: set
-              - name: project_id
       - name: toxdatacommons_treatment_project_ids
         doc_type: treatment_project_ids
         type: aggregator
