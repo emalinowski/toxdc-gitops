@@ -48,7 +48,7 @@ hatchery:
     # -- (string) The Docker image repository for the hatchery service.
     repository: quay.io/cdis/hatchery
     # -- (string) Overrides the image tag whose default is the chart appVersion.
-    tag: 2023.09
+    tag: 2024.10
   hatchery:
     containers:
       - target-port: 8888
@@ -87,7 +87,7 @@ metadata:
   enabled: true
   image:
     repository: quay.io/cdis/metadata-service
-    tag: 2023.05
+    tag: 2024.10
 
 sheepdog:
   externalSecrets:
@@ -129,4 +129,4 @@ arborist:
     dbcreds: "toxdc-arborist"
   image:
     repository: quay.io/cdis/arborist
-    tag: 2023.05
+    tag: 2024.10

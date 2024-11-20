@@ -22,4 +22,3 @@ fence:
     onlyDbgap: false
     # -- (string) Path to the user.yaml file in S3.
     userYamlS3Path: s3://toxdatacommons-gen3-users/prod/user.yaml
-  USER_YAML: |
