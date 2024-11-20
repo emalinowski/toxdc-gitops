@@ -20,11 +20,11 @@ ssjdispatcher:
   # -- (string) Docker pull policy.
     pullPolicy: IfNotPresent
   # -- (string) Overrides the image tag whose default is the chart appVersion.
-    tag: "2023.05"
+    tag: "2024.10"
   awsRegion: us-east-1
   # -- (string) AWS STS to issue temporary credentials to users and roles that make an AWS STS request. Values regional or global.
   awsStsRegionalEndpoints: regional
-  indexing: quay.io/cdis/indexs3client:2023.08
+  indexing: quay.io/cdis/indexs3client:2024.10
   ssjcreds:
     sqsUrl: ""
     jobPattern: "s3://toxdc-data-bucket/*"

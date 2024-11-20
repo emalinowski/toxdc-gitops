@@ -17,7 +17,7 @@ guppy:
   image:
     repository: quay.io/cdis/guppy
     pullPolicy: Always
-    tag: "2024.04"
+    tag: "2024.10"
 
   # -- (list) Elasticsearch index configurations
   indices:
@@ -43,7 +43,7 @@ guppy:
 etl:
   image:
     tube:
-      tag: "2023.10"
+      tag: "2024.10"
   etlMapping:
     mappings:
       - name: fairtox_treatment
