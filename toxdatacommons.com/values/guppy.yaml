@@ -27,6 +27,8 @@ guppy:
       type: subject
     - index: toxdatacommons_data_file
       type: data_file
+    - index: treatment_project_ids
+      type: treatment
   # -- (string) The Elasticsearch configuration index
   configIndex: toxdatacommons_array-config
   # -- (string) The field used for access control and authorization filters
