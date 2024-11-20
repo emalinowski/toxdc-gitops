@@ -27,7 +27,7 @@ guppy:
       type: subject
     - index: toxdatacommons_data_file
       type: data_file
-    - index: treatment_project_ids
+    - index: toxdatacommons_treatment_project_ids
       type: treatment_project_ids
   # -- (string) The Elasticsearch configuration index
   configIndex: toxdatacommons_array-config
@@ -196,7 +196,7 @@ etl:
                 src: id
                 fn: set
               - name: project_id
-      - name: treatment_project_ids
+      - name: toxdatacommons_treatment_project_ids
         doc_type: treatment_project_ids
         type: aggregator
         root: treatment
