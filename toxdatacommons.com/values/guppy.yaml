@@ -205,7 +205,7 @@ etl:
                 fn: set
               - name: description
                 src: description
-                fn: set  
+                fn: set
           study:
             props:
               - name: study_submitter_id
