@@ -26,7 +26,7 @@ ssjdispatcher:
   awsStsRegionalEndpoints: regional
   indexing: quay.io/cdis/indexs3client:2024.10
   ssjcreds:
-    sqsUrl: "https://sqs.us-east-1.amazonaws.com/243323637959/toxdc-data-bucket_data_upload/"
+    sqsUrl: "https://sqs.us-east-1.amazonaws.com/243323637959/toxdatacommons-default-243323637959-upload_data_upload"
     jobPattern: "s3://toxdc-data-bucket/*"
     jobUser: "gdcapi"
     jobPassword: "test"
